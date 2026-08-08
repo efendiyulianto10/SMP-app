@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cabang SMP</title>
+</head>
+
+<body>
+
+<h1>Data Cabang</h1>
+
+<label>Nama Cabang</label>
+<br>
+<input id="nama_cabang">
+
+<br><br>
+
+<label>Alamat</label>
+<br>
+<input id="alamat">
+
+<br><br>
+
+<button onclick="simpanCabang()">
+Simpan Cabang
+</button>
+
+<p id="hasil"></p>
+
+<hr>
+
+<h2>Daftar Cabang</h2>
+
+<div id="daftarCabang">
+Memuat data...
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../../supabase.js"></script>
+
+<script src="cabang.js"></script>
+
+</body>
+
+</html>

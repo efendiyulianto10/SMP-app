@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Closing SMP</title>
+</head>
+
+<body>
+
+<h1>Closing Konsinyasi</h1>
+
+
+<label>Tanggal</label>
+<br>
+<input id="tanggal" type="date">
+
+
+<br><br>
+
+
+<label>Cabang</label>
+<br>
+<select id="cabang_id"></select>
+
+
+<br><br>
+
+
+<label>Supplier</label>
+<br>
+<select id="supplier_id"></select>
+
+
+<br><br>
+
+
+<label>Produk</label>
+<br>
+<select id="produk_id"></select>
+
+
+<br><br>
+
+
+<button onclick="hitungClosing()">
+Hitung Closing
+</button>
+
+
+<hr>
+
+
+<div id="hasilClosing">
+Belum dihitung
+</div>
+
+
+<br>
+
+<button onclick="simpanClosing()">
+Simpan Closing
+</button>
+
+
+<p id="pesan"></p>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../../supabase.js"></script>
+
+<script src="closing.js"></script>
+
+
+</body>
+
+</html>
+

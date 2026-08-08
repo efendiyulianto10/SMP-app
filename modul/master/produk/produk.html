@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Produk SMP</title>
+</head>
+
+<body>
+
+<h1>Data Produk</h1>
+
+
+<label>Cabang</label>
+<br>
+
+<select id="cabang_id">
+</select>
+
+
+<br><br>
+
+
+<label>Supplier</label>
+<br>
+
+<select id="supplier_id">
+</select>
+
+
+<br><br>
+
+
+<label>Nama Produk</label>
+<br>
+
+<input id="nama">
+
+
+<br><br>
+
+
+<label>Harga Modal</label>
+<br>
+
+<input id="harga_modal" type="number">
+
+
+<br><br>
+
+
+<label>Harga Jual</label>
+<br>
+
+<input id="harga" type="number">
+
+
+<br><br>
+
+
+<button onclick="simpanProduk()">
+Simpan Produk
+</button>
+
+
+<p id="hasil"></p>
+
+
+<hr>
+
+
+<h2>Daftar Produk</h2>
+
+<div id="daftarProduk">
+Memuat data...
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../../supabase.js"></script>
+
+<script src="produk.js"></script>
+
+
+</body>
+
+</html>

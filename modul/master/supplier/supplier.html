@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supplier SMP</title>
+</head>
+
+<body>
+
+<h1>Data Supplier</h1>
+
+<label>Nama Supplier</label>
+<br>
+<input id="nama">
+
+<br><br>
+
+<label>No HP</label>
+<br>
+<input id="no_hp">
+
+<br><br>
+
+<label>Alamat</label>
+<br>
+<input id="alamat">
+
+<br><br>
+
+<button onclick="simpanSupplier()">
+Simpan Supplier
+</button>
+
+<p id="hasil"></p>
+
+<hr>
+
+<h2>Daftar Supplier</h2>
+
+<div id="daftarSupplier">
+Memuat data...
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../../../supabase.js"></script>
+
+<script src="supplier.js"></script>
+</body>
+</html>
