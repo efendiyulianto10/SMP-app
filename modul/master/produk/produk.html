@@ -1,88 +1,17 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Produk SMP</title>
-</head>
-
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Produk SMP</title></head>
 <body>
-
 <h1>Data Produk</h1>
-
-
-<label>Cabang</label>
-<br>
-
-<select id="cabang_id">
-</select>
-
-
-<br><br>
-
-
-<label>Supplier</label>
-<br>
-
-<select id="supplier_id">
-</select>
-
-
-<br><br>
-
-
-<label>Nama Produk</label>
-<br>
-
-<input id="nama">
-
-
-<br><br>
-
-
-<label>Harga Modal</label>
-<br>
-
-<input id="harga_modal" type="number">
-
-
-<br><br>
-
-
-<label>Harga Jual</label>
-<br>
-
-<input id="harga" type="number">
-
-
-<br><br>
-
-
-<button onclick="simpanProduk()">
-Simpan Produk
-</button>
-
-
-<p id="hasil"></p>
-
-
-<hr>
-
-
-<h2>Daftar Produk</h2>
-
-<div id="daftarProduk">
-Memuat data...
-</div>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="../../../supabase.js"></script>
-
-<script src="produk.js"></script>
-
-
+<p><b>ID Produk dibuat otomatis</b> — contoh: P001, P002, P003.</p>
+<label>Cabang</label><br><select id="cabang_id"></select><br><br>
+<label>Supplier</label><br><select id="supplier_id"></select><br><br>
+<label>Nama Produk</label><br><input id="nama"><br><br>
+<label>Harga Supplier</label><br><input id="harga_modal" type="number" min="0" step="500" value="9000"><br><small>Default Rp9.000; boleh Rp8.500 untuk supplier tertentu.</small><br><br>
+<label>Harga Jual</label><br><input id="harga" type="number" min="0" step="500" value="10000"><br><br>
+<button onclick="simpanProduk()">Simpan Produk & Buat ID</button>
+<p id="hasil"></p><hr>
+<h2>Daftar Produk</h2><div id="daftarProduk">Memuat data...</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../../supabase.js"></script><script src="produk.js"></script>
 </body>
-
 </html>
