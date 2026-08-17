@@ -5,6 +5,18 @@ ALTER TABLE produk ADD COLUMN IF NOT EXISTS kode_produk TEXT;
 CREATE SEQUENCE IF NOT EXISTS supplier_kode_seq MINVALUE 1;
 CREATE SEQUENCE IF NOT EXISTS produk_kode_seq MINVALUE 1;
 
+WITH bernomor AS (
+SELECT id,'S'||LPAD((ROW_NUMBER() OVER (ORDER BY id)+COALESCE((SELECT MAX((substring(kode_supplier FROM 2))::INTEGER) FROM supplier WHERE kode_supplier ~ '^S[0-9]+$'),0))::TEXT,3,'0') AS kode
+FROM supplier WHERE kode_supplier IS NULL
+)
+UPDATE supplier s SET kode_supplier=b.kode FROM bernomor b WHERE s.id=b.id;
+
+WITH bernomor AS (
+SELECT id,'P'||LPAD((ROW_NUMBER() OVER (ORDER BY id)+COALESCE((SELECT MAX((substring(kode_produk FROM 2))::INTEGER) FROM produk WHERE kode_produk ~ '^P[0-9]+$'),0))::TEXT,3,'0') AS kode
+FROM produk WHERE kode_produk IS NULL
+)
+UPDATE produk p SET kode_produk=b.kode FROM bernomor b WHERE p.id=b.id;
+
 DO $$
 DECLARE n INTEGER;
 BEGIN
@@ -13,18 +25,6 @@ PERFORM setval('supplier_kode_seq',GREATEST(n,1),n>0);
 SELECT COALESCE(MAX((substring(kode_produk FROM 2))::INTEGER),0) INTO n FROM produk WHERE kode_produk ~ '^P[0-9]+$';
 PERFORM setval('produk_kode_seq',GREATEST(n,1),n>0);
 END $$;
-
-WITH bernomor AS (
-SELECT id,'S'||LPAD((ROW_NUMBER() OVER(ORDER BY id)+COALESCE((SELECT MAX((substring(kode_supplier FROM 2))::INTEGER) FROM supplier WHERE kode_supplier ~ '^S[0-9]+$'),0))::TEXT,3,'0') AS kode
-FROM supplier WHERE kode_supplier IS NULL
-)
-UPDATE supplier s SET kode_supplier=b.kode FROM bernomor b WHERE s.id=b.id;
-
-WITH bernomor AS (
-SELECT id,'P'||LPAD((ROW_NUMBER() OVER(ORDER BY id)+COALESCE((SELECT MAX((substring(kode_produk FROM 2))::INTEGER) FROM produk WHERE kode_produk ~ '^P[0-9]+$'),0))::TEXT,3,'0') AS kode
-FROM produk WHERE kode_produk IS NULL
-)
-UPDATE produk p SET kode_produk=b.kode FROM bernomor b WHERE p.id=b.id;
 
 CREATE UNIQUE INDEX IF NOT EXISTS supplier_kode_supplier_unique ON supplier(kode_supplier);
 CREATE UNIQUE INDEX IF NOT EXISTS produk_kode_produk_unique ON produk(kode_produk);
