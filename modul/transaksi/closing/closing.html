@@ -1,79 +1,23 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-<title>Closing SMP</title>
-</head>
-
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Closing Konsinyasi SMP</title><link rel="stylesheet" href="../../../style.css"></head>
 <body>
-
+<main>
+<a href="../../../index.html">← Kembali</a>
 <h1>Closing Konsinyasi</h1>
-
-
-<label>Tanggal</label>
-<br>
-<input id="tanggal" type="date">
-
-
-<br><br>
-
-
-<label>Cabang</label>
-<br>
-<select id="cabang_id"></select>
-
-
-<br><br>
-
-
-<label>Supplier</label>
-<br>
-<select id="supplier_id"></select>
-
-
-<br><br>
-
-
-<label>Produk</label>
-<br>
-<select id="produk_id"></select>
-
-
-<br><br>
-
-
-<button onclick="hitungClosing()">
-Hitung Closing
-</button>
-
-
+<p>Kasir cukup pilih tanggal, cabang, dan supplier. Sistem menghitung barang kembali otomatis.</p>
+<label>Tanggal</label><br><input id="tanggal" type="date"><br><br>
+<label>Cabang</label><br><select id="cabang_id"></select><br><br>
+<label>Supplier</label><br><select id="supplier_id"></select><br><br>
+<button onclick="hitungClosing()">Tampilkan Rekap Supplier</button>
 <hr>
-
-
-<div id="hasilClosing">
-Belum dihitung
-</div>
-
-
-<br>
-
-<button onclick="simpanClosing()">
-Simpan Closing
-</button>
-
-
+<section id="ringkasanClosing">Belum dihitung</section>
+<div id="daftarClosing"></div>
+<br><button id="btnSimpan" onclick="simpanClosing()" disabled>Selesaikan Closing & Pengembalian</button>
 <p id="pesan"></p>
-
-
-
+</main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script src="../../../supabase.js"></script>
-
 <script src="closing.js"></script>
-
-
 </body>
-
 </html>
-
