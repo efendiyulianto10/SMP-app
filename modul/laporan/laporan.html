@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Laporan SMP</title><link rel="stylesheet" href="../../style.css"></head>
+<body>
+<main>
+<a href="../../index.html">← Kembali</a>
+<h1>Dashboard Laporan</h1>
+<label>Tanggal</label><input id="tanggal" type="date"><button onclick="muatLaporan()">Tampilkan</button>
+<section id="ringkasan">Memuat...</section>
+<section><h2>Penjualan</h2><div id="daftarPenjualan">Memuat...</div></section>
+<section><h2>Barang Masuk</h2><div id="daftarBarangMasuk">Memuat...</div></section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../../supabase.js"></script>
+<script src="laporan.js"></script>
+</body>
+</html>

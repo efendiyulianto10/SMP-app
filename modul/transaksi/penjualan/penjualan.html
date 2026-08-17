@@ -1,82 +1,18 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-<title>Penjualan SMP</title>
-</head>
-
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Penjualan SMP</title><link rel="stylesheet" href="../../../style.css"></head>
 <body>
-
+<main>
+<a href="../../../index.html">← Kembali</a>
 <h1>Penjualan</h1>
-
-
-<label>Tanggal</label>
-<br>
-<input id="tanggal" type="date">
-
-
-<br><br>
-
-
-<label>Cabang</label>
-<br>
-<select id="cabang_id"></select>
-
-
-<br><br>
-
-
-<label>Produk</label>
-<br>
-<select id="produk_id"></select>
-
-
-<br><br>
-
-
-<label>Jumlah Terjual</label>
-<br>
-<input id="jumlah_terjual" type="number">
-
-
-<br><br>
-
-
-<label>Harga Jual</label>
-<br>
-<input id="harga_jual" type="number">
-
-
-<br><br>
-
-
-<button onclick="simpanPenjualan()">
-Simpan Penjualan
-</button>
-
-
-<p id="hasil"></p>
-
-
-<hr>
-
-
-<h2>Riwayat Penjualan</h2>
-
-<div id="daftarPenjualan">
-Memuat data...
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="../../../supabase.js"></script>
-
-<script src="penjualan.js"></script>
-
-
+<label>Tanggal</label><br><input id="tanggal" type="date"><br><br>
+<label>Cabang</label><br><select id="cabang_id"></select><br><br>
+<label>Produk</label><br><select id="produk_id"></select><br><br>
+<label>Jumlah Terjual</label><br><input id="jumlah_terjual" type="number" min="1" step="1"><br><br>
+<label>Harga Jual</label><br><input id="harga_jual" type="number" min="0" step="500" value="10000"><br><small>Harga jual standar SMP: Rp10.000.</small><br><br>
+<button onclick="simpanPenjualan()">Simpan Penjualan</button><p id="hasil"></p>
+<hr><h2>Riwayat Penjualan</h2><div id="daftarPenjualan">Memuat data...</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../../supabase.js"></script><script src="penjualan.js"></script>
 </body>
-
 </html>
-
-

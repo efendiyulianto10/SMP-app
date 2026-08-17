@@ -1,89 +1,19 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-<title>Barang Masuk SMP</title>
-</head>
-
+<html lang="id">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barang Masuk SMP</title><link rel="stylesheet" href="../../../style.css"></head>
 <body>
-
+<main>
+<a href="../../../index.html">← Kembali</a>
 <h1>Barang Masuk Konsinyasi</h1>
-
-
-<label>Tanggal</label>
-<br>
-<input id="tanggal" type="date">
-
-
-<br><br>
-
-
-<label>Cabang</label>
-<br>
-<select id="cabang_id"></select>
-
-
-<br><br>
-
-
-<label>Supplier</label>
-<br>
-<select id="supplier_id"></select>
-
-
-<br><br>
-
-
-<label>Produk</label>
-<br>
-<select id="produk_id"></select>
-
-
-<br><br>
-
-
-<label>Jumlah Masuk</label>
-<br>
-<input id="jumlah_masuk" type="number">
-
-
-<br><br>
-
-
-<label>Harga Modal</label>
-<br>
-<input id="harga_modal" type="number">
-
-
-<br><br>
-
-
-<button onclick="simpanBarangMasuk()">
-Simpan Barang Masuk
-</button>
-
-
-<p id="hasil"></p>
-
-
-<hr>
-
-
-<h2>Riwayat Barang Masuk</h2>
-
-<div id="daftarBarangMasuk">
-Memuat data...
-</div>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="../../../supabase.js"></script>
-
-<script src="barang_masuk.js"></script>
-
-
+<label>Tanggal</label><br><input id="tanggal" type="date"><br><br>
+<label>Cabang</label><br><select id="cabang_id"></select><br><br>
+<label>Supplier</label><br><select id="supplier_id"></select><br><br>
+<label>Produk</label><br><select id="produk_id"></select><br><br>
+<label>Jumlah Masuk</label><br><input id="jumlah_masuk" type="number" min="1" step="1"><br><br>
+<label>Harga Supplier</label><br><input id="harga_modal" type="number" min="0" step="500" value="9000"><br><small>Umumnya Rp9.000. Jika supplier tertentu Rp8.500, ubah menjadi Rp8.500.</small><br><br>
+<button onclick="simpanBarangMasuk()">Simpan Barang Masuk</button><p id="hasil"></p>
+<hr><h2>Riwayat Barang Masuk</h2><div id="daftarBarangMasuk">Memuat data...</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../../supabase.js"></script><script src="barang_masuk.js"></script>
 </body>
-
 </html>
